@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soat</title>
+    <link rel="stylesheet" href="./css/clock.css" />
+</head>
+
+<body>
+    <div class="clock-container">
+        <h1 id="clock">00:00:00</h1>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.querySelector('#clock').innerHTML = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+    </script>
+</body>
+
+</html>
